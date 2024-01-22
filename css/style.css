@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600&family=Roboto:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.center {
+  padding: 0 calc(50% - 599px);
+}
+
+.top__hw1 {
+  height: 1024px;
+  background-image: url(../img/top_hw_1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 217px;
+}
+
+.header__big {
+  width: 700px;
+  color: #FFF;
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+.header__medi {
+  width: 510px;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 32px;
+  margin-bottom: 44px;
+}
+.header__medi--bold {
+  font-weight: 700;
+}
+.header__start {
+  width: 234px;
+  height: 48px;
+  border-radius: 30px;
+  background: #9C0332;
+  border: 1px solid #9C0332;
+  color: #FFF;
+  font-size: 18px;
+  transition: box-shadow 0.5s ease-in-out;
+}
+.header__start:hover {
+  box-shadow: inset 0 0 10px 2px #FFF;
+}
+.header__start--scalable {
+  transition: transform 0.5s ease-in-out;
+}
+.header__start:hover .header__start--scalable {
+  transform: scaleX(1.1);
+}
+
+.games {
+  height: 556px;
+  background: #000915;
+}
+.games.flex {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.games__title {
+  display: none;
+}
+.games__card {
+  width: 379px;
+  height: 300px;
+  position: relative;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(39, 1, 15, 0) 0%, #001944 100%), url(<path-to-image>), lightgray 50%/cover no-repeat;
+  transition: transform 0.5s ease-in-out;
+}
+.games__card:hover {
+  transform: scale(1.1);
+}
+.games__card--no1 {
+  background-image: url(../img/game_1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.games__card--no2 {
+  background-image: url(../img/game_2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.games__card--no3 {
+  background-image: url(../img/game_3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.games__caption {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  transition: transform 0.5s ease-in-out;
+}/*# sourceMappingURL=style.css.map */
