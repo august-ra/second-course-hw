@@ -1,4 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600&family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+// vars
+
+$magenta: #9C0332;
+
+// styles
+
+:root {
+  --magenta: #{$magenta};
+}
 
 * {
   margin: 0;
@@ -7,8 +17,21 @@
   font-family: "Montserrat", sans-serif;
 }
 
+body {
+  background: #000915;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
 .center {
-  padding: 0 calc(50% - 599px);
+  padding-inline: max(50% - 599px, 16px);
 }
 
 .top {
@@ -25,9 +48,14 @@
 }
 
 .header {
+
+  &.flex {
+    display: flex;
+    flex-direction: column;
+  }
   
   &__big {
-    width: 700px;
+    max-width: 700px;
     color: #FFF;
     font-size: 64px;
     font-weight: 700;
@@ -35,35 +63,51 @@
   }
 
   &__medi {
-    width: 510px;
+    max-width: 510px;
     color: #FFF;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 32px;
     margin-bottom: 44px;
 
     &--bold {
       font-weight: 700;
+      display: inline-block;
+      transition: text-decoration-color 0.8s;
+
+      &:hover {
+        text-decoration: underline 4px var(--magenta);
+      }
+
     }
 
   }
 
   &__start {
-    width: 234px;
+    display: block;
+    width: 100%;
+    max-width: 234px;
     height: 48px;
     border-radius: 30px;
-    background: #9C0332;
-    border: 1px solid #9C0332;
+    background: var(--magenta);
+    border: 1px solid var(--magenta);
     color: #FFF;
     font-size: 18px;
     transition: box-shadow 0.5s ease-in-out;
+
+    &.flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     &:hover {
       box-shadow: inset 0 0 10px 2px #FFF;
     }
 
     &--scalable {
-      transition: transform 0.5s ease-in-out;
+      display: inline-block;
+      transition: transform 0.3s ease-in-out;
     }
 
     &:hover &--scalable {
@@ -75,11 +119,13 @@
 }
 
 .games {
-  height: 556px;
+  min-height: 556px;
   background: #000915;
+  padding-block: 128px;
 
   &.flex {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 32px;
   }
@@ -89,9 +135,10 @@
   }
 
   &__card {
-    width: 379px;
+    display: table;
+    width: 378px;
     height: 300px;
-    position: relative;
+    padding: 32px;
     border-radius: 16px;
     transition: transform 0.5s ease-in-out;
 
@@ -123,14 +170,78 @@
   }
 
   &__caption {
-    position: absolute;
-    left: 32px;
-    bottom: 32px;
+    display: table-cell;
+    vertical-align: bottom;
     color: #FFF;
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, text-shadow 0.3s ease-in-out;
+
+    .games__card:hover & {
+      text-shadow: -6px 7px 13px lighten($magenta, 30%); //greenyellow;
+    }
+
+  }
+
+}
+
+@media (max-width: 1229px) {
+
+  .center {
+    padding-inline: max(50% - 394px, 16px);
+  }
+
+}
+
+@media (max-width: 819px) {
+
+  .center {
+    padding-inline: max(50% - 189px, 16px);
+  }
+
+  .header {
+    text-align: center;
+
+    &.flex {
+      align-items: center;
+    }
+
+    &__big {
+      font-size: 48px;
+    }
+
+    &__medi {
+      font-size: 16px;
+    }
+
+  }
+
+  .games {
+    //padding-block: 64px;
+
+    &__card {
+      width: 100%;
+      max-width: 378px;
+      padding-inline: 16px;
+    }
+
+  }
+
+}
+
+@media (max-width: 370px) {
+
+  .header {
+
+    &__big {
+      font-size: 32px;
+    }
+
+    &__medi {
+      font-size: 14px;
+    }
+
   }
 
 }
