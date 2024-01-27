@@ -11,14 +11,9 @@ function jumpToSection(id) {
 
 }
 
-function scrollToGames() {
+/////////////
 
-  jumpToSection("games")
-
-}
-
-const collection = document.getElementsByClassName("header__start")
-
-for (const button of collection) {
-  button.addEventListener("click", scrollToGames)
-}
+document.getElementById("start").addEventListener("click", () => jumpToSection("games"))
+document.getElementById("game_1").addEventListener("click", () => jumpToSection("seasons"))
+document.getElementById("game_2").addEventListener("click", () => jumpToSection("memory"))
+document.getElementById("game_3").addEventListener("click", () => jumpToSection("quiz"))
