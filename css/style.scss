@@ -74,7 +74,6 @@ img {
       margin-bottom: 32px;
     }
 
-  &__big {
     & + .secret {
       display: none;
       color: red;
@@ -311,7 +310,7 @@ img {
 
     }
 
-    .game__center {
+    & .game__center {
       text-align: center;
 
       &.flex {
@@ -437,7 +436,6 @@ img {
         font-size: 48px;
       }
 
-    &__medi {
       & + .secret {
         top: 284px;
         left: calc(max(50% - 202px, 16px) + 90px);
@@ -481,14 +479,12 @@ img {
 
     &-huge {
 
-  .header {
       & + .secret {
         left: max(50% - 112px, 16px);
       }
 
     }
 
-    &__huge {
   }
 
 }
