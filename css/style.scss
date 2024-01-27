@@ -84,7 +84,6 @@ img {
       left: calc(max(50% - 599px, 16px) + 80px);
       text-shadow: 0 0 6px maroon; // red;
       transform: rotate(30deg);
-
     }
 
     &:hover + .secret, & + .secret:hover {
@@ -493,8 +492,6 @@ img {
 
   .text {
     height: 735px;
-
-    }
 
     &-big {
       width: 100%;
