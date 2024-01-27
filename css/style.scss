@@ -30,36 +30,42 @@ img {
   width: 100%;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .center {
   padding-inline: max(50% - 599px, 16px);
 }
 
-.top {
-
-  &__hw1 {
-    height: 1024px;
-    background-image: url(../img/top_hw_1.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding-top: 217px;
-  }
-
-}
-
 .header {
+  height: 1024px;
+  background-image: url(../img/top_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 217px;
 
   &.flex {
     display: flex;
     flex-direction: column;
   }
   
-  &__big {
+  &__huge {
     max-width: 700px;
     color: #FFF;
     font-size: 64px;
     font-weight: 700;
     margin-bottom: 32px;
+  }
+
+  &__big {
+    width: 584px;
+    color: #FFF;
+    font-size: 48px;
+    font-weight: 700;
   }
 
   &__medi {
@@ -118,70 +124,98 @@ img {
 
 }
 
-.games {
-  min-height: 556px;
-  background: #000915;
-  padding-block: 128px;
+.main {
+  flex-grow: 1;
+}
 
-  &.flex {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 32px;
+.game {
+
+  &s {
+    min-height: 556px;
+    background: #000915;
+    padding-block: 128px;
+
+    &.flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 32px;
+    }
+
+    &__title {
+      display: none;
+    }
+
+    &__card {
+      display: table;
+      width: 378px;
+      height: 300px;
+      padding: 32px;
+      border-radius: 16px;
+      transition: transform 0.5s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &--no1 {
+        background-image: url(../img/game_1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      &--no2 {
+        background-image: url(../img/game_2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      &--no3 {
+        background-image: url(../img/game_3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+    }
+
+    &__caption {
+      display: table-cell;
+      vertical-align: bottom;
+      color: #FFF;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 32px;
+      transition: transform 0.5s ease-in-out, text-shadow 0.3s ease-in-out;
+
+      .games__card:hover & {
+        text-shadow: -6px 7px 13px lighten($magenta, 30%); //greenyellow;
+      }
+
+    }
+
   }
 
-  &__title {
-    display: none;
-  }
+}
 
-  &__card {
-    display: table;
-    width: 378px;
-    height: 300px;
-    padding: 32px;
-    border-radius: 16px;
-    transition: transform 0.5s ease-in-out;
+#quiz {
+  background: url("../img/game_3_bg.png");
+}
 
-    &:hover {
-      transform: scale(1.1);
-    }
+.footer {
+  display: table;
+  width: 100%;
+  height: 80px;
 
-    &--no1 {
-      background-image: url(../img/game_1.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
-    
-    &--no2 {
-      background-image: url(../img/game_2.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
-    
-    &--no3 {
-      background-image: url(../img/game_3.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
-
-  }
-
-  &__caption {
+  &__text {
     display: table-cell;
-    vertical-align: bottom;
+    text-align: center;
+    vertical-align: middle;
     color: #FFF;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 32px;
-    transition: transform 0.5s ease-in-out, text-shadow 0.3s ease-in-out;
-
-    .games__card:hover & {
-      text-shadow: -6px 7px 13px lighten($magenta, 30%); //greenyellow;
-    }
-
+    font-size: 12px;
+    font-weight: 400;
   }
 
 }
@@ -207,7 +241,7 @@ img {
       align-items: center;
     }
 
-    &__big {
+    &__huge {
       font-size: 48px;
     }
 
@@ -234,7 +268,7 @@ img {
 
   .header {
 
-    &__big {
+    &__huge {
       font-size: 32px;
     }
 
