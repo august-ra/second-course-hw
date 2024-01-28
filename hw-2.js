@@ -74,7 +74,7 @@ num /= 3
 --num
 
 document.write(`<h2>Task #7</h2>`)
-document.write(`<p>I've done some calculation without any reasons and result is <b>${num}</b>. You can do anything with it...</p>`)
+document.write(`<p>I've done some calculation without any reasons and result is <b>${num}</b>. <i>You can do anything with it...</i></p>`)
 
 // task #08
 
