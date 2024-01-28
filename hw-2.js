@@ -52,7 +52,7 @@ result = Math.pow(a, b)
 
 // document.write(`<p>Exponentiation of base 2 to exponent 5 should return 32. You may check if you want.</p>`)
 document.write(`<h2>Task #5</h2>`)
-document.write(`<p><u>Exponentiation</u> of base <b>${a}</b> to exponent <b>${b}</b> should return <b>${result}</b>. You may check if you want.</p>`)
+document.write(`<p><u>Exponentiation</u> of base <b>${a}</b> to exponent <b>${b}</b> should return <b>${result}</b>. <i>You may check if you want.</i></p>`)
 
 // task #06
 
