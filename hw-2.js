@@ -116,7 +116,7 @@ if (user.hasOwnProperty(result))
 
 //
 
-document.write(`<p>I wanted to say story about <u>${user.punisher}</u>. But in the last moment I've decided not to do that... <i>Ameno.</i> ${user.symbol}</p>`)
+document.write(`<p>I wanted to say a story about <u>${user.punisher}</u>. But in the last moment I've decided not to do that... <i>Ameno.</i> ${user.symbol}</p>`)
 
 // task #10
 
