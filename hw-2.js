@@ -109,7 +109,7 @@ function printEN() {
 
     //
 
-    user.cityOfResidence = "Jerusalem"
+    user["city of residence"] = "Jerusalem"
     user.theEnd = true
     user.symbol = "☨"
     user.age = 34 // it could be but not...
@@ -117,7 +117,7 @@ function printEN() {
 
     //
 
-    delete user.cityOfResidence
+    delete user["city of residence"]
 
     //
 
@@ -240,7 +240,7 @@ function printRU() {
 
     //
 
-    user.cityOfResidence = "Иерусалим"
+    user["city of residence"] = "Иерусалим"
     user.theEnd = true
     user.symbol = "☨"
     user.age = 34 // it could be but not...
@@ -248,7 +248,7 @@ function printRU() {
 
     //
 
-    delete user.cityOfResidence
+    delete user["city of residence"]
 
     //
 
