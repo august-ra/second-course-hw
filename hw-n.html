@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en,ru">
 <head>
   <meta charset="UTF-8">
   <title>HomeWorks</title>
+  <style>
+    .flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .heading > b {
+      display: inline-block;
+      color: #9C0332;
+      border: 2px dashed;
+      padding: 3px;
+    }
+    .lang {
+      margin-right: 15px;
+    }
+  </style>
 </head>
 <body>
-  <h1>There's a page for <b>JS</b>.</h1>
-  <br>
+  <header class="flex" id="header">
+    <label class="label" for="lang">Поменяй, если надо на</label>
+    <select class="lang" id="lang">
+      <option value="ru">Богатый РУССКИЙ язык</option>
+      <option value="en">Ущербный АНГЛИЙСКИЙ язык</option>
+    </select>
+    <label id="lang-result"></label>
+  </header>
+
+  <main id="root">
+  </main>
 
   <script src="./hw-2.js"></script>
 </body>
