@@ -8,7 +8,7 @@ let userName = null
 let userAge = null
 let fieldName = null
 
-let root = document.getElementById("root")
+const root = document.getElementById("root")
 
 function printEN() {
     root.innerHTML = `<h1 class="heading">There's a page for <b>JS</b>.</h1><br>`
