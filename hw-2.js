@@ -1,3 +1,5 @@
+import * as common from './common.js'
+
 console.log('testing...')
 
 let a
@@ -7,6 +9,8 @@ let result
 let userName = null
 let userAge = null
 let fieldName = null
+
+let units = null
 
 const root = document.getElementById("root")
 
@@ -223,11 +227,13 @@ function printRU() {
 
     // task #08
 
-    if (!userAge)
+    if (!userAge) {
         userAge = prompt("Сколько тебе лет?")
+        units = common.calcUnits(userAge, 'лет', 'год', 'года')
+    }
 
     root.innerHTML += `<h2>Задача №8</h2>`
-    root.innerHTML += `<p>Ты ввёл <u>свой возраст</u>. Если тебе честно <b>${userAge}</b> лет — ты выглядишь превосходно. Где тебя хранили?</p>`
+    root.innerHTML += `<p>Ты ввёл <u>свой возраст</u>. Если тебе честно <b>${userAge}</b> ${units} — ты выглядишь превосходно. Где тебя хранили?</p>`
 
     // task #09
 
@@ -273,7 +279,6 @@ function printRU() {
     root.innerHTML += `<p>Салют, <b>${userName}</b>!</p>`
 }
 
-const header= document.getElementById("header")
 const select = document.getElementById("lang")
 const label = document.getElementById("lang-result")
 
