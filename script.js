@@ -1,16 +1,16 @@
-import * as HW2 from './hw-2.js'
-import * as HW3 from './hw-3.js'
+import * as HW2 from "./hw-2.js"
+import * as HW3 from "./hw-3.js"
 
-console.log('testing...')
+console.log("testing...")
 
-const arr = window.location.search.substring(1).split('&')
+const arr = window.location.search.substring(1).split("&")
 let HW = HW3
 
 for (const item of arr) {
-    if (!item.includes('hwnum'))
+    if (!item.includes("hwnum"))
         continue
 
-    let hwnum = Number(item.split('=')[1])
+    let hwnum = Number(item.split("=")[1])
 
     if (hwnum === 2)
         HW = HW2

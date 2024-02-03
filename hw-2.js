@@ -1,4 +1,4 @@
-import * as common from './common.js'
+import * as common from "./common.js"
 
 let a
 let b
@@ -7,8 +7,6 @@ let result
 let userName = null
 let userAge = null
 let fieldName = null
-
-let units = null
 
 export function printEN(root) {
     root.innerHTML = `<h1 class="heading">There's a page for <b>JS</b>.</h1><br>`
@@ -225,9 +223,11 @@ export function printRU(root) {
 
     // task #08
 
+    let units
+
     if (!userAge) {
         userAge = prompt("Сколько тебе лет?")
-        units = common.calcUnits(userAge, 'лет', 'год', 'года')
+        units = common.calcUnits(userAge, "лет", "год", "года")
     }
 
     root.innerHTML += `<h2>Задача №8</h2>`

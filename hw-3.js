@@ -1,4 +1,6 @@
-import * as common from './common.js'
+import * as common from "./common.js"
+
+const password = "WhyNotProduction"
 
 export function printEN(root) {
     root.innerHTML = `<h1 class="heading">There's a page for <b>JS</b>.</h1><br>`
