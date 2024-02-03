@@ -4,38 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Играем в игровые игры</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
   <div class="wrapper">
-    <div class="top top__hw1 center">
-      <header class="header">
-        <p class="header__big">Добро пожаловать на мой сайт!</p>
-        <p class="header__medi">Вам предстоит пройти несколько увлекательных игр. Если готовы — нажимайте <span class="header__medi--bold">поехали</span> и <span class="header__medi--bold">приступайте</span>.</p>
-        <button class="header__start"><p class="header__start--scalable">Поехали!</p></button>
-      </header>
-    </div>
+    <header class="header flex center">
+      <h1 class="text-huge">
+        <button class="button text-huge">Добро пожаловать на мой сайт!</button>
+      </h1>
 
-    <main>
-      <section class="games flex center">
+      <div class="secret">ПОСТОРОННИМ В...</div>
+
+      <p class="text-medi">
+        Вам предстоит пройти несколько увлекательных игр. Если готовы — нажимайте
+        <span class="text-medi--bold">поехали</span>
+        и
+        <span class="text-medi--bold">приступайте</span>.
+      </p>
+
+      <button class="button-start" id="start">
+        <span class="button-start--scalable">Поехали!</span>
+      </button>
+
+      <!--
+      <a class="button-start flex" href="#">
+        <span class="button-start--scalable">Поехали!</span>
+      </a>
+      -->
+    </header>
+
+    <main class="main">
+      <section class="games flex center" id="games">
         <h2 class="games__title">Игры</h2>
 
-        <div class="games__card games__card--no1">
+        <a class="games__card games__card--no1" id="game_1">
           <h3 class="games__caption">Игра 1</h3>
-        </div>
+        </a>
 
-        <div class="games__card games__card--no2">
+        <a class="games__card games__card--no2" id="game_2">
           <h3 class="games__caption">Игра 2</h3>
+        </a>
+
+        <a class="games__card games__card--no3" id="game_3">
+          <h3 class="games__caption">Игра 3</h3>
+        </a>
+      </section>
+
+      <section class="game game-line game-line--left flex center" id="seasons">
+        <div class="game__box game__left flex">
+          <h2 class="text-big">Времена года</h2>
+  
+          <p class="text-medi">
+            Нажмите кнопку <span class="text-medi--bold">играть</span>, введите номер месяца <span class="text-medi--bold">от 1 до 12</span> — и Вы узнаете, к какому времени года он относится.
+          </P>
+  
+          <button class="button-start">
+            <span class="button-start--scalable">Играть!</span>
+          </button>
         </div>
 
-        <div class="games__card games__card--no3">
-          <h3 class="games__caption">Игра 3</h3>
+        <img class="game__logo" src="./img/game_1_logo.svg" alt="game #1">
+      </section>
+
+      <section class="game game-line game-line--right flex center" id="memory">
+        <div class="game__box game__right flex">
+          <h2 class="text-big">Запомни слова</h2>
+  
+          <p class="text-medi">
+            При нажатии на кнопку <span class="text-medi--bold">играть</span> Вы увидите несколько слов, которые Вам необходимо запомнить.
+          </p>
+  
+          <button class="button-start">
+            <span class="button-start--scalable">Играть!</span>
+          </button>
+        </div>
+
+        <img class="game__logo" src="./img/game_2_logo.svg" alt="game #2">
+      </section>
+
+      <section class="game game-line game-line--center flex center" id="quiz">
+        <div class="game__box game__center flex">
+          <h2 class="text-big">Игра в загадки</h2>
+
+          <p class="text-medi">
+            Компьютер загадывает загадку, а Вам необходимо её угадать. Если Вы дадите неправильный ответ — компьютер даст Вам подсказку. У Вас будут <span class="text-medi--bold">три попытки</span> и <span class="text-medi--bold">две подсказки</span>.
+          </p>
+
+          <button class="button-start">
+            <span class="button-start--scalable">Играть!</span>
+          </button>
         </div>
       </section>
     </main>
+
+    <footer class="footer flex">
+      <p class="footer__text">Все права защищены</p>
+    </footer>
   </div>
 
-  <script src="hw-1.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
