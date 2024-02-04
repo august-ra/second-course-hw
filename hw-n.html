@@ -4,10 +4,24 @@
   <meta charset="UTF-8">
   <title>HomeDreamWorks</title>
   <style>
-    .flex {
-      display: flex;
-      align-items: flex-start;
-      gap: 5px;
+    body {
+      margin-block: 0;
+      height: 100dvh;
+    }
+    .wrapper {
+      &.flex {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .header {
+      padding-block: 8px;
+      &.flex {
+        display: flex;
+        align-items: flex-start;
+        gap: 5px;
+      }
     }
     .heading > b {
       display: inline-block;
@@ -18,20 +32,48 @@
     .lang {
       margin-right: 15px;
     }
+    .root {
+      flex-grow: 1;
+      padding-bottom: 16px;
+    }
+    .footer {
+      margin: 16px -8px 0 -8px;
+      padding: 16px 8px;
+      background: #F7F6F6;
+
+      &.flex {
+        display: flex;
+        align-items: baseline;
+        gap: 42px;
+      }
+
+      & h2 {
+        margin: 0;
+        padding: 0;
+      }
+    }
   </style>
 </head>
 <body>
-  <header class="flex" id="header">
-    <label class="label" for="lang">Если требуется — поменяй на</label>
-    <select class="lang" id="lang">
-      <option value="ru">Богатый РУССКИЙ язык</option>
-      <option value="en">Ущербный АНГЛИЙСКИЙ язык</option>
-    </select>
-    <label id="lang-result"></label>
-  </header>
+  <div class="wrapper flex">
+    <header class="header flex" id="header">
+      <label class="label" for="lang">Если требуется — поменяй на</label>
+      <select class="lang" id="lang">
+        <option value="ru">Богатый РУССКИЙ язык</option>
+        <option value="en">Ущербный АНГЛИЙСКИЙ язык</option>
+      </select>
+      <label id="lang-result"></label>
+    </header>
 
-  <main id="root">
-  </main>
+    <main class="root" id="root">
+    </main>
+
+    <footer class="footer flex">
+      <h2>© Why Not Productions 2024</h2>
+      <a href="https://www.whynotproductions.fr/"><img src="whynot_footer.gif"></a>
+      <a href="mailto:contact@whynotproductions.fr">contact@whynotproductions.fr</a>
+    </footer>
+  </div>
 
   <script type="module" src="./script.js"></script>
   <script type="module" src="./common.js"></script>
