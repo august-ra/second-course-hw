@@ -30,6 +30,7 @@ export function printEN(root) {
     const arr = [0, 10, -3, 2]
 
     root.innerHTML += `<h2>Task №2</h2>`
+    root.innerHTML += `<p>Checking that the range <b>(0; 10)</b> includes numbers from a set.</p>`
 
     for (const item of arr) {
         if (item > 0 && item < 10)
@@ -124,7 +125,7 @@ export function printRU(root) {
     const arr = [0, 10, -3, 2]
 
     root.innerHTML += `<h2>Задача №2</h2>`
-    root.innerHTML += `<p>Проверяем значения на входеждение в диапазон <b>(0; 10)</b> <i>(невключительно)</i>.</p>`
+    root.innerHTML += `<p>Проверяем значения на вхождение в диапазон <b>(0; 10)</b> <i>(невключительно)</i>.</p>`
 
     for (const item of arr) {
         if (item > 0 && item < 10)
