@@ -1,4 +1,4 @@
-console.log('testing...')
+import * as common from "./common.js"
 
 let a
 let b
@@ -8,9 +8,7 @@ let userName = null
 let userAge = null
 let fieldName = null
 
-const root = document.getElementById("root")
-
-function printEN() {
+export function printEN(root) {
     root.innerHTML = `<h1 class="heading">There's a page for <b>JS</b>.</h1><br>`
 
     // task #01
@@ -22,7 +20,7 @@ function printEN() {
 
     a = 20
     root.innerHTML += `<h2>Task #1</h2>`
-    root.innerHTML += `<p><b>Variable "a" is </b>${a}.</p>`
+    root.innerHTML += `<p>Variable "a" is <b>${a}</b>.</p>`
 
     // task #02
 
@@ -126,8 +124,10 @@ function printEN() {
 
     root.innerHTML += `<h2>Task #9</h2>`
 
-    if (user.hasOwnProperty(fieldName))
+    if (fieldName && user.hasOwnProperty(fieldName))
         root.innerHTML += `<p>You have asked a <u>${fieldName}</u>. I have the answer: <b>${user[fieldName]}</b>.</p>`
+    else
+        root.innerHTML += `<p>You have asked something strange. I have no answer.</p>`
 
     //
 
@@ -142,7 +142,7 @@ function printEN() {
     root.innerHTML += `<p>Salut, <b>${userName}</b>!</p>`
 }
 
-function printRU() {
+export function printRU(root) {
     root.innerHTML = `<h1 class="heading">ВНИМАНИЕ! Страница исполнения <b>JS</b>.</h1><br>`
 
     // task #01
@@ -154,7 +154,7 @@ function printRU() {
 
     a = 20
     root.innerHTML += `<h2>Задача №1</h2>`
-    root.innerHTML += `<p><b>Переменная "a" содержит </b>${a}.</p>`
+    root.innerHTML += `<p>Переменная "a" содержит <b>${a}</b>.</p>`
 
     // task #02
 
@@ -223,11 +223,15 @@ function printRU() {
 
     // task #08
 
-    if (!userAge)
+    let units
+
+    if (!userAge) {
         userAge = prompt("Сколько тебе лет?")
+        units = common.calcUnits(userAge, "лет", "год", "года")
+    }
 
     root.innerHTML += `<h2>Задача №8</h2>`
-    root.innerHTML += `<p>Ты ввёл <u>свой возраст</u>. Если тебе честно <b>${userAge}</b> лет — ты выглядишь превосходно. Где тебя хранили?</p>`
+    root.innerHTML += `<p>Ты ввёл <u>свой возраст</u>. Если тебе честно <b>${userAge}</b> ${units} — ты выглядишь превосходно. Где тебя хранили?</p>`
 
     // task #09
 
@@ -257,8 +261,10 @@ function printRU() {
 
     root.innerHTML += `<h2>Задача №9</h2>`
 
-    if (user.hasOwnProperty(fieldName))
+    if (fieldName && user.hasOwnProperty(fieldName))
         root.innerHTML += `<p>Ты спросил <u>${fieldName}</u>. Мне удалось выяснить ответ: <b>${user[fieldName]}</b>.</p>`
+    else
+        root.innerHTML += `<p>Ты спросил что-то непонятное. Я не знаю ответ.</p>`
 
     //
 
@@ -272,25 +278,3 @@ function printRU() {
     root.innerHTML += `<h2>Задача №10</h2>`
     root.innerHTML += `<p>Салют, <b>${userName}</b>!</p>`
 }
-
-const header= document.getElementById("header")
-const select = document.getElementById("lang")
-const label = document.getElementById("lang-result")
-
-function print() {
-    if (select.value === "ru")
-        printRU()
-    else
-        printEN()
-}
-
-select.addEventListener("change", function () {
-    if (select.value === "en")
-        label.innerHTML = `<i>Да, у них даже будущего времени нет! И падежей! И суффиксов!<br>Ну, ладно, какие-то суффиксы у них, всё же, есть...</i>`
-    else
-        label.innerHTML = ""
-
-    print()
-})
-
-print()

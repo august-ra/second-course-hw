@@ -45,7 +45,7 @@ img {
   background-image: url(../img/top_bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top 10% center;
   padding-top: 217px;
   position: relative;
 
@@ -60,7 +60,7 @@ img {
 
   &-huge {
 
-    &.button {
+    & .button {
       text-align: left;
       background-color: transparent;
       border: none;
@@ -140,6 +140,7 @@ img {
     border: 1px solid var(--magenta);
     color: #FFF;
     font-size: 18px;
+    cursor: pointer;
     transition: box-shadow 0.5s ease-in-out;
 
     &.flex {
@@ -415,7 +416,9 @@ img {
   }
 
   .header {
+    height: 735px;
     text-align: center;
+    background-position-x: 31%;
 
     &.flex {
       align-items: center;
