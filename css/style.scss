@@ -42,8 +42,7 @@ img {
 
 .header {
   height: 1024px;
-  background-image: url(../img/top_bg.png);
-  background-repeat: no-repeat;
+  background: url(../img/top_bg.png) no-repeat;
   background-size: cover;
   background-position: top 10% center;
   padding-top: 217px;
@@ -106,12 +105,15 @@ img {
   }
 
   &-medi {
-    max-width: 510px;
     color: #FFF;
     font-size: 18px;
     font-weight: 400;
     line-height: 32px;
     margin-bottom: 44px;
+
+    &:not(&--wide) {
+      max-width: 510px;
+    }
 
     &--bold {
       font-weight: 700;
@@ -331,7 +333,9 @@ img {
 }
 
 #quiz {
-  background: url("../img/game_3_bg.png");
+  background: url("../img/game_3_bg.png") no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .footer {

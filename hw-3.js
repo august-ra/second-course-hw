@@ -46,7 +46,6 @@ export function printEN(root) {
     d = 42
     e = 168
 
-
     if (d > 100 || e > 100)
         answer = "Right!"
     else
@@ -95,7 +94,7 @@ export function printEN(root) {
     root.innerHTML += `<h2>Task №5</h2>`
 
     if (answer === null)
-        root.innerHTML += `<p><b>There isn't month with ${monthNumber}</b> number in a year.</p>`
+        root.innerHTML += `<p>There isn't month with <b>${monthNumber}</b> number in a year.</p>`
     else
         root.innerHTML += `<p>Month <b>${monthNumber}</b> is <u>${answer}</u>.</p>`
 
@@ -140,7 +139,6 @@ export function printRU(root) {
 
     d = 42
     e = 168
-
 
     if (d > 100 || e > 100)
         answer = "Верно!"
@@ -190,7 +188,7 @@ export function printRU(root) {
     root.innerHTML += `<h2>Задача №5</h2>`
 
     if (answer === null)
-        root.innerHTML += `<p><b>В году нет ${monthNumber}-го</b> месяца.</p>`
+        root.innerHTML += `<p>В году нет <b>${monthNumber}-го</b> месяца.</p>`
     else
         root.innerHTML += `<p><b>${monthNumber}-й</b> месяц это <u>${answer}</u>.</p>`
 
