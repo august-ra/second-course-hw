@@ -29,7 +29,7 @@ export function printEN(root) {
 
     const arr = [0, 10, -3, 2]
 
-    root.innerHTML += `<h2>Task №2</h2>`
+    root.innerHTML += `<h2>Task #2</h2>`
     root.innerHTML += `<p>Checking that the range <b>(0; 10)</b> includes numbers from a set.</p>`
 
     for (const item of arr) {
@@ -59,7 +59,7 @@ export function printEN(root) {
     a = "2";
     b = "3";
 
-    root.innerHTML += `<h2>Task №4</h2>`
+    root.innerHTML += `<h2>Task #4</h2>`
     root.innerHTML += `<p>There was two strings <b>${a}</b> и <b>${b}</b> but the summary is <b>${Number(a) + Number(b)}</b>.</p>`
 
     // task #05
@@ -91,7 +91,7 @@ export function printEN(root) {
             answer = null
     }
 
-    root.innerHTML += `<h2>Task №5</h2>`
+    root.innerHTML += `<h2>Task #5</h2>`
 
     if (answer === null)
         root.innerHTML += `<p>There isn't month with <b>${monthNumber}</b> number in a year.</p>`
@@ -101,7 +101,7 @@ export function printEN(root) {
     // task #06
 
     root.innerHTML += `<h2>Task #6</h2>`
-    root.innerHTML += `<p>There is my games' page. <a href="index.html">Tap it!</a></p>`
+    root.innerHTML += `<p>There is my games' page. <a href="../index.html">Tap it!</a></p>`
 }
 
 export function printRU(root) {
@@ -109,7 +109,7 @@ export function printRU(root) {
 
     // task #01
 
-    root.innerHTML += `<h2>Задача #1</h2>`
+    root.innerHTML += `<h2>Задача №1</h2>`
 
     if (!confirm)
         confirm = prompt(`Введите пароль.`)
@@ -145,7 +145,7 @@ export function printRU(root) {
     else
         answer = "Неверно!"
 
-    root.innerHTML += `<h2>Задача #3</h2>`
+    root.innerHTML += `<h2>Задача №3</h2>`
     root.innerHTML += `<p>Для значений <b>${d}</b> и <b>${e}</b> система ответила <b>"${answer}"</b>.</p>`
 
     // task #04
@@ -199,5 +199,5 @@ export function printRU(root) {
     result = a % b
 
     root.innerHTML += `<h2>Задача №6</h2>`
-    root.innerHTML += `<p>Переход на страницу с играми <a href="index.html">здесь!</a></p>`
+    root.innerHTML += `<p>Переход на страницу с играми <a href="../index.html">здесь!</a></p>`
 }
