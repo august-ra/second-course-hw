@@ -21,7 +21,10 @@ export function printEN(root) {
 
         say_twice:
             for (const step of double) {
-                root.innerHTML += `${text}`
+                if (index !== 2 || step !== 2)
+                    root.innerHTML += text
+                else
+                    root.innerHTML += text.toLowerCase()
 
                 if (index === 6 && step === 2)
                     delimiter = ''
@@ -127,7 +130,10 @@ export function printRU(root) {
 
         say_twice:
             for (const step of double) {
-                root.innerHTML += `${text}`
+                if (index !== 2 || step !== 2)
+                    root.innerHTML += text
+                else
+                    root.innerHTML += text.toLowerCase()
 
                 if (index === 6 && step === 2)
                     delimiter = ''
