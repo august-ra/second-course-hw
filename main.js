@@ -1,14 +1,12 @@
 
 function jumpToSection(id) {
+    if (!id)
+        return
 
-  if (!id)
-    return
+    const element = document.getElementById(id)
 
-  const element = document.getElementById(id)
-
-  if (element)
-      element.scrollIntoView({behavior: "smooth"})
-
+    if (element)
+        element.scrollIntoView({behavior: "smooth"})
 }
 
 /////////////
