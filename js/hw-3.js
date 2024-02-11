@@ -194,10 +194,6 @@ export function printRU(root) {
 
     // task #06
 
-    a = 9
-    b = 2
-    result = a % b
-
     root.innerHTML += `<h2>Задача №6</h2>`
-    root.innerHTML += `<p>Переход на страницу с играми <a href="../index.html">здесь!</a></p>`
+    root.innerHTML += `<p>Переход на страницу с играми <a href="../index.html">здесь</a>!</p>`
 }

@@ -1,11 +1,12 @@
 import * as HW2 from "./hw-2.js"
 import * as HW3 from "./hw-3.js"
 import * as HW4 from "./hw-4.js"
+import * as HW5 from "./hw-5.js"
 
 console.log("testing...")
 
 const arr = window.location.search.substring(1).split("&")
-let HW = HW4
+let HW = HW5
 
 for (const item of arr) {
     if (!item.includes("hwnum"))
@@ -20,8 +21,12 @@ for (const item of arr) {
         case 3:
             HW = HW3
             break
-        default:
+        case 4:
             HW = HW4
+            break
+        case 5:
+        default:
+            HW = HW5
     }
 
     break

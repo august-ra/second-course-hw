@@ -214,7 +214,7 @@ export function printRU(root) {
     const units = common.calcUnits(counter, 'делений', 'деление', 'деления')
 
     root.innerHTML += `<h2>Задача №5</h2>`
-    root.innerHTML += `<p>Система произвела <b>${counter} ${units}</b> и получила <b>${num}</b>.</p>`
+    root.innerHTML += `<p>Система произвела <b>${counter} ${units}</b> и получила <b>${num.toLocaleString('ru-RU')}</b>.</p>`
 
     // task #06
 
@@ -244,14 +244,18 @@ class Schedule {
         while (this.dayOfWeek !== 5)
 
         while (this.day <= this.lastDayOfMonth) {
+            root.innerHTML += `<p>`
+
             if (lang === 'ru') {
-                root.innerHTML += `<h5>${this.date.toLocaleDateString('ru-RU')}</h5>`
-                root.innerHTML += `<p>Сегодня ${this.day}-е число. Это пятница — садись делать отчёт.</p>`
+                root.innerHTML += `<b>${this.date.toLocaleDateString('ru-RU')}</b><br>`
+                root.innerHTML += `Сегодня ${this.day}-е число. Это пятница — садись делать отчёт.`
             }
             else {
-                root.innerHTML += `<h5>${this.date.toLocaleDateString('en-GB')}</h5>`
-                root.innerHTML += `<p>It's a friday the ${this.day}th. Do the report for your boss.</p>`
+                root.innerHTML += `<b>${this.date.toLocaleDateString('en-GB')}</b><br>`
+                root.innerHTML += `It's a friday the ${this.day}th. Do the report for your boss.`
             }
+
+            root.innerHTML += `</p>`
 
             this.day += 7
             this.date = new Date(this.year, this.month, this.day)
