@@ -1,4 +1,4 @@
-import * as common from "./common.js"
+// import * as common from "./common.js"
 
 const password = "1"
 let confirm

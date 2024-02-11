@@ -11,7 +11,7 @@ function jumpToSection(id) {
 
 /////////////
 
-document.getElementById("start").addEventListener("click", () => jumpToSection("games"))
+document.getElementById("btn_start").addEventListener("click", () => jumpToSection("games"))
 document.getElementById("game_1").addEventListener("click", () => jumpToSection("seasons"))
 document.getElementById("game_2").addEventListener("click", () => jumpToSection("memory"))
 document.getElementById("game_3").addEventListener("click", () => jumpToSection("quiz"))
@@ -20,7 +20,7 @@ document.getElementById("game_3").addEventListener("click", () => jumpToSection(
 
 // games
 
-document.getElementById("start_1").addEventListener("click", () => {
+document.getElementById("btn_start_1").addEventListener("click", () => {
     const text = prompt("Введите номер месяца, чтобы узнать время года.")
     const month = Number(text)
     const sentence = "Не смогу определить сезон."
