@@ -132,7 +132,7 @@ export function printEN(root) {
     if (!number)
         number = prompt('Input a number to calc cubic number')
 
-    root.innerHTML += `<h2>Task №6</h2>`
+    root.innerHTML += `<h2>Task #6</h2>`
     root.innerHTML += `<p>${getCubicNumberWithComment(number)}</p>`
 
     // task #7

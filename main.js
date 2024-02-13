@@ -27,11 +27,11 @@ document.getElementById("btn_start_1").addEventListener("click", () => {
 
     let element = document.getElementById("game-seasons")
     element.style.height = "300px"
-    element.style.zIndex = "5";
+    element.style.zIndex = "5"
 
-    element = element.children[0];
-    element.style.display = "inline-flex";
-    element.style.opacity = "1";
+    element = element.children[0]
+    element.style.display = "inline-flex"
+    element.style.opacity = "1"
 })
 
 document.getElementById("btn_do_1").addEventListener("click", () => {
