@@ -65,6 +65,10 @@ img {
       text-align: left;
       background-color: transparent;
       border: none;
+
+      &::selection {
+        background-color: var(--magenta);
+      }
     }
 
     & {
@@ -100,6 +104,10 @@ img {
     font-weight: 700;
     transition: text-decoration-color 0.8s;
 
+    &::selection {
+      background-color: var(--magenta);
+    }
+
     &:hover {
       text-decoration: underline 4px var(--magenta);
     }
@@ -113,6 +121,10 @@ img {
     line-height: 32px;
     margin-bottom: 44px;
 
+    &::selection {
+      background-color: var(--magenta);
+    }
+
     &:not(&--wide) {
       max-width: 510px;
     }
@@ -121,6 +133,10 @@ img {
       font-weight: 700;
       display: inline-block;
       transition: text-decoration-color 0.8s;
+
+      &::selection {
+        background-color: var(--magenta);
+      }
 
       &:hover {
         text-decoration: underline 4px var(--magenta);

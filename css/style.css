@@ -52,6 +52,9 @@ img {
   background-color: transparent;
   border: none;
 }
+.text-huge .button::selection {
+  background-color: var(--magenta);
+}
 .text-huge {
   max-width: 700px;
   color: #FFF;
@@ -80,6 +83,9 @@ img {
   font-weight: 700;
   transition: text-decoration-color 0.8s;
 }
+.text-big::selection {
+  background-color: var(--magenta);
+}
 .text-big:hover {
   text-decoration: underline 4px var(--magenta);
 }
@@ -90,6 +96,9 @@ img {
   line-height: 32px;
   margin-bottom: 44px;
 }
+.text-medi::selection {
+  background-color: var(--magenta);
+}
 .text-medi:not(.text-medi--wide) {
   max-width: 510px;
 }
@@ -97,6 +106,9 @@ img {
   font-weight: 700;
   display: inline-block;
   transition: text-decoration-color 0.8s;
+}
+.text-medi--bold::selection {
+  background-color: var(--magenta);
 }
 .text-medi--bold:hover {
   text-decoration: underline 4px var(--magenta);
