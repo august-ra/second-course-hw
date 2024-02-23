@@ -30,8 +30,10 @@ document.getElementById("btn_start_1").addEventListener("click", () => {
     element.style.zIndex = "5"
 
     element = element.children[0]
-    element.style.display = "inline-flex"
-    element.style.opacity = "1"
+    element.style.display    = "inline-flex"
+    element.style.alignItems = "center"
+    element.style.gap        = "15px"
+    element.style.opacity    = "1"
 })
 
 document.getElementById("btn_do_1").addEventListener("click", () => {

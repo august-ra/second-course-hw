@@ -4,12 +4,14 @@
 
 $red: #EB443F;
 $magenta: #9C0332;
+$blue: #001944;
 
 // styles
 
 :root {
   --red: #{$red};
   --magenta: #{$magenta};
+  --blue: #{$blue};
 }
 
 * {
@@ -21,6 +23,16 @@ $magenta: #9C0332;
 
 body {
   background: #000915;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+    background-color: var(--blue);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(-45deg, var(--blue) 0%, var(--magenta) 20px, var(--magenta) calc(100% - 20px), var(--blue) 100%);
+  }
+
 }
 
 a {
