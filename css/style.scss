@@ -14,6 +14,9 @@ $background: #000915;
   --magenta: #{$magenta};
   --blue: #{$blue};
   --background: #{$background};
+
+  --cur-arrow: url("../img/BBani/Pen.cur"), auto;
+  --cur-hand: url("../img/BBani/UpArrow.cur"), pointer;
 }
 
 * {
@@ -21,10 +24,12 @@ $background: #000915;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  cursor: inherit;
 }
 
 body {
   background: #000915;
+  cursor: var(--cur-arrow);
 
   &::-webkit-scrollbar {
     width: 7px;
@@ -39,6 +44,14 @@ body {
 
 a {
   text-decoration: none;
+}
+
+a, button {
+  cursor: var(--cur-hand);
+}
+
+label, input, select {
+  cursor: var(--cur-arrow);
 }
 
 img {
@@ -175,7 +188,7 @@ img {
     color: #FFF;
     font-size: 18px;
     outline: none;
-    cursor: pointer;
+    //cursor: pointer;
     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 
     &.flex {
