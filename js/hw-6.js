@@ -1,7 +1,7 @@
 
 let data
 
-// task #1
+// task #01
 
 data = [1, 5, 4, 10, 0, 3]
 
@@ -17,17 +17,17 @@ function printBefore10(array) {
 
 printBefore10(data)
 
-// task #2
+// task #02
 
 console.log(data[2])
 console.log(data.indexOf(4))
 
-// task #3
+// task #03
 
 data = [1, 3, 5, 10, 20]
 console.log(data.join(' '))
 
-// task #4
+// task #04
 
 function getMatrix() {
     let result = []
@@ -47,14 +47,14 @@ function getMatrix() {
 
 console.log(getMatrix())
 
-// task #5
+// task #05
 
 data = [1, 1, 1]
 data.push(2, 2, 2)
 
 console.log(data)
 
-// task #6
+// task #06
 
 data = [9, 8, 7, 'a', 6, 5]
 data = data.sort()
@@ -62,7 +62,7 @@ data.pop()
 
 console.log(data)
 
-// task #7
+// task #07
 
 data = [9, 8, 7, 6, 5]
 
@@ -79,7 +79,7 @@ function quiz(array) {
 
 quiz(data)
 
-// task #8
+// task #08
 
 data = 'abcdef'
 
@@ -95,7 +95,7 @@ function invert(str) {
 
 invert(data)
 
-// task #9
+// task #09
 
 data = [[1, 2, 3,], [4, 5, 6]]
 

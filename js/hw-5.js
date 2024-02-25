@@ -5,7 +5,7 @@ let age, number
 export function printEN(root) {
     root.innerHTML = `<h1 class="heading">There's a page for <b>JS</b>.</h1><br>`
 
-    // task #1
+    // task #01
 
     const getMinValueWithComment = (lhs, rhs) => {
         const sentence = `There are two numbers <b>${lhs}</b> and <b>${rhs}</b>.`
@@ -18,13 +18,13 @@ export function printEN(root) {
             return `${sentence} Second is less, so it returns <b>${rhs}</b>.`
     }
 
-    root.innerHTML += `<h2>Task #1</h2>`
+    root.innerHTML += `<h2>Task #01</h2>`
     root.innerHTML += `<p>`
     root.innerHTML += `${getMinValueWithComment(8, 4)}<br>`
     root.innerHTML += `${getMinValueWithComment(6, 6)}`
     root.innerHTML += `</p>`
 
-    // task #2
+    // task #02
 
     const checkEvenNumberWithComment = (value) => {
         const sentence = `There is a number <b>${value}</b>.`
@@ -35,13 +35,13 @@ export function printEN(root) {
             return `${sentence} Number is <b>even</b>.`
     }
 
-    root.innerHTML += `<h2>Task #2</h2>`
+    root.innerHTML += `<h2>Task #02</h2>`
     root.innerHTML += `<p>`
     root.innerHTML += `${checkEvenNumberWithComment(42)}<br>`
     root.innerHTML += `${checkEvenNumberWithComment(13)}`
     root.innerHTML += `</p>`
 
-    // task #3
+    // task #03
 
     const getSquareNumberWithComment = (value) => {
         const result = value ** 2
@@ -54,13 +54,13 @@ export function printEN(root) {
         return `Number <b>${value}</b> has its square number <b>${result}</b>.`
     }
 
-    root.innerHTML += `<h2>Task #3</h2>`
+    root.innerHTML += `<h2>Task #03</h2>`
     root.innerHTML += `<p>`
     root.innerHTML += `${getSquareNumberWithComment(16)}<br>`
     root.innerHTML += `${getSquareNumberWithComment(9)}`
     root.innerHTML += `</p>`
 
-    // task #4
+    // task #04
 
     const checkAge = () => {
         let sentence = 'How old are you?'
@@ -80,10 +80,10 @@ export function printEN(root) {
             return `${sentence}<br>What's up, dady?`
     }
 
-    root.innerHTML += `<h2>Task #4</h2>`
+    root.innerHTML += `<h2>Task #04</h2>`
     root.innerHTML += `<p>${checkAge()}</p>`
 
-    // task #5
+    // task #05
 
     const checkNumbersWithComment = (lhs, rhs) => {
         let errorsCount = 0
@@ -112,13 +112,13 @@ export function printEN(root) {
             return `${sentence} Production of them is <b>${lhs * rhs}</b>.`
     }
 
-    root.innerHTML += `<h2>Task #5</h2>`
+    root.innerHTML += `<h2>Task #05</h2>`
     root.innerHTML += `<p>`
     root.innerHTML += `${checkNumbersWithComment(11, 13)}<br>`
     root.innerHTML += `${checkNumbersWithComment(13, 'error')}`
     root.innerHTML += `</p>`
 
-    // task #6
+    // task #06
 
     const getCubicNumberWithComment = (value) => {
         let number = Number(value)
@@ -132,10 +132,10 @@ export function printEN(root) {
     if (!number)
         number = prompt('Input a number to calc cubic number')
 
-    root.innerHTML += `<h2>Task #6</h2>`
+    root.innerHTML += `<h2>Task #06</h2>`
     root.innerHTML += `<p>${getCubicNumberWithComment(number)}</p>`
 
-    // task #7
+    // task #07
 
     const print = (circle) => {
         const radius    = circle.radius
@@ -145,15 +145,15 @@ export function printEN(root) {
         return `For circle with a radius <b>${radius}</b>: perimeter is <b>${perimeter}</b> and area is <b>${area}</b>.`
     }
 
-    root.innerHTML += `<h2>Задача №6</h2>`
+    root.innerHTML += `<h2>Task #06</h2>`
     root.innerHTML += `<p>`
     root.innerHTML += `${print(circle1)}<br>`
     root.innerHTML += `${print(circle2)}`
     root.innerHTML += `</p>`
 
-    // task #8
+    // task #08
 
-    root.innerHTML += `<h2>Task #8</h2>`
+    root.innerHTML += `<h2>Task #08</h2>`
     root.innerHTML += `<p>There is my games' page. <a href="../index.html">Tap it!</a></p>`
 }
 
@@ -173,7 +173,7 @@ export function printRU(root) {
             return `${sentence} Второе меньше, система выбрает <b>${rhs}</b>.`
     }
 
-    root.innerHTML += `<h2>Задача №1</h2>`
+    root.innerHTML += `<h2>Задача №01</h2>`
     root.innerHTML += `<p>`
     root.innerHTML += `${getMinValueWithComment(8, 4)}<br>`
     root.innerHTML += `${getMinValueWithComment(6, 6)}`
@@ -188,7 +188,7 @@ export function printRU(root) {
             return `Число <b>${value}</b>: <b>чётное</b>.`
     }
 
-    root.innerHTML += `<h2>Задача №2</h2>`
+    root.innerHTML += `<h2>Задача №02</h2>`
     root.innerHTML += `<p>`
     root.innerHTML += `${checkEvenNumberWithComment(42)}<br>`
     root.innerHTML += `${checkEvenNumberWithComment(13)}`
@@ -208,7 +208,7 @@ export function printRU(root) {
         return `Квадрат числа <b>${value}</b> равен <b>${result}</b>.`
     }
 
-    root.innerHTML += `<h2>Задача #3</h2>`
+    root.innerHTML += `<h2>Задача №03</h2>`
     root.innerHTML += `<p>`
     root.innerHTML += `${getSquareNumberWithComment(16)}<br>`
     root.innerHTML += `${getSquareNumberWithComment(9)}`
@@ -234,7 +234,7 @@ export function printRU(root) {
             return `${sentence}<br><i>Как ты, старичок?</i>`
     }
 
-    root.innerHTML += `<h2>Задача №4</h2>`
+    root.innerHTML += `<h2>Задача №04</h2>`
     root.innerHTML += `<p>${checkAge()}</p>`
 
     // task #05
@@ -266,7 +266,7 @@ export function printRU(root) {
             return `${sentence} Их произведение равно <b>${lhs * rhs}</b>.`
     }
 
-    root.innerHTML += `<h2>Задача №5</h2>`
+    root.innerHTML += `<h2>Задача №05</h2>`
     root.innerHTML += `<p>`
     root.innerHTML += `${checkNumbersWithComment(11, 13)}<br>`
     root.innerHTML += `${checkNumbersWithComment(13, 'ошибка')}`
@@ -286,10 +286,10 @@ export function printRU(root) {
     if (!number)
         number = prompt('Введите число, которое будем возводить в третью степень')
 
-    root.innerHTML += `<h2>Задача №6</h2>`
+    root.innerHTML += `<h2>Задача №06</h2>`
     root.innerHTML += `<p>${getCubicNumberWithComment(number)}</p>`
 
-    // task #7
+    // task #07
 
     const print = (circle) => {
         const radius    = circle.radius
@@ -299,7 +299,7 @@ export function printRU(root) {
         return `Для круга c радиусом <b>${radius}</b> периметр равен <b>${perimeter}</b> и площадь равна <b>${area}</b>.`
     }
 
-    root.innerHTML += `<h2>Задача №7</h2>`
+    root.innerHTML += `<h2>Задача №07</h2>`
     root.innerHTML += `<p>`
     root.innerHTML += `${print(circle1)}<br>`
     root.innerHTML += `${print(circle2)}`
@@ -307,12 +307,12 @@ export function printRU(root) {
 
     // task #08
 
-    root.innerHTML += `<h2>Задача №8</h2>`
+    root.innerHTML += `<h2>Задача №08</h2>`
     root.innerHTML += `<p>Переход на страницу с играми <a href="../index.html">здесь</a>!</p>`
 }
 
 
-// task #7
+// task #07
 
 function getPerimeter() {
     return Math.floor(200 * Math.PI * this.radius) / 100
