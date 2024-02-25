@@ -46,21 +46,32 @@
         </a>
       </section>
 
-      <article class="game game-line game-line--left flex center" id="seasons">
-        <div class="game__box game__left flex">
-          <h2 class="text-big">Времена года</h2>
+      <div class="game-group grid">
+        <article class="game game-line game-line--left flex center" id="seasons">
+          <div class="game__box game__left flex">
+            <h2 class="text-big">Времена года</h2>
 
-          <p class="text-medi">
-            Нажмите кнопку <span class="text-medi--bold">играть</span>, введите номер месяца <span class="text-medi--bold">от 1 до 12</span> — и Вы узнаете, к какому времени года он относится.
-          </P>
+            <p class="text-medi">
+              Нажмите кнопку <span class="text-medi--bold">играть</span>, введите номер месяца <span class="text-medi--bold">от 1 до 12</span> — и Вы узнаете, к какому времени года он относится.
+            </P>
 
-          <button class="button-start" id="btn_start_1">
-            <span class="button-start--scalable">Играть!</span>
-          </button>
+            <button class="button-start" id="btn_start_1">
+              <span class="button-start--scalable">Играть!</span>
+            </button>
+          </div>
+
+          <img class="game__logo" src="./img/game_1_logo.svg" alt="game #1">
+        </article>
+
+        <div class="game-line--hidden center" id="game-seasons">
+          <div class="game-line__content flex">
+            <label class="text-start" for="monthNumber">Введите номер месяца<br><span class="text-start--bold">(от 1 до 12)</span></label>
+            <input class="input-start" type="text" id="monthNumber">
+            <button class="button-start" id="btn_do_1">Выполнить</button>
+            <p class="text-start text-start--bold" id="game-seasons-result"></p>
+          </div>
         </div>
-
-        <img class="game__logo" src="./img/game_1_logo.svg" alt="game #1">
-      </article>
+      </div>
 
       <article class="game game-line game-line--right flex center" id="memory">
         <div class="game__box game__right flex">
@@ -90,6 +101,8 @@
             <span class="button-start--scalable">Играть!</span>
           </button>
         </div>
+
+        <div class="game-gradient"></div>
       </article>
     </main>
 

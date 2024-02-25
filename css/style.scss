@@ -2,12 +2,21 @@
 
 // vars
 
+$red: #EB443F;
 $magenta: #9C0332;
+$blue: #001944;
+$background: #000915;
 
 // styles
 
 :root {
+  --red: #{$red};
   --magenta: #{$magenta};
+  --blue: #{$blue};
+  --background: #{$background};
+
+  --cur-arrow: url("../img/BBani/Pen.cur"), auto;
+  --cur-hand: url("../img/BBani/UpArrow.cur"), pointer;
 }
 
 * {
@@ -15,14 +24,34 @@ $magenta: #9C0332;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  cursor: inherit;
 }
 
 body {
   background: #000915;
+  cursor: var(--cur-arrow);
+
+  &::-webkit-scrollbar {
+    width: 7px;
+    background-color: var(--blue);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(-45deg, var(--blue) 0%, var(--magenta) 20px, var(--magenta) calc(100% - 20px), var(--blue) 100%);
+  }
+
 }
 
 a {
   text-decoration: none;
+}
+
+a, button {
+  cursor: var(--cur-hand);
+}
+
+label, input, select {
+  cursor: var(--cur-arrow);
 }
 
 img {
@@ -63,6 +92,10 @@ img {
       text-align: left;
       background-color: transparent;
       border: none;
+
+      &::selection {
+        background-color: var(--magenta);
+      }
     }
 
     & {
@@ -98,6 +131,10 @@ img {
     font-weight: 700;
     transition: text-decoration-color 0.8s;
 
+    &::selection {
+      background-color: var(--magenta);
+    }
+
     &:hover {
       text-decoration: underline 4px var(--magenta);
     }
@@ -111,6 +148,10 @@ img {
     line-height: 32px;
     margin-bottom: 44px;
 
+    &::selection {
+      background-color: var(--magenta);
+    }
+
     &:not(&--wide) {
       max-width: 510px;
     }
@@ -119,6 +160,10 @@ img {
       font-weight: 700;
       display: inline-block;
       transition: text-decoration-color 0.8s;
+
+      &::selection {
+        background-color: var(--magenta);
+      }
 
       &:hover {
         text-decoration: underline 4px var(--magenta);
@@ -142,8 +187,9 @@ img {
     border: 1px solid var(--magenta);
     color: #FFF;
     font-size: 18px;
-    cursor: pointer;
-    transition: box-shadow 0.5s ease-in-out;
+    outline: none;
+    //cursor: pointer;
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 
     &.flex {
       display: flex;
@@ -151,7 +197,8 @@ img {
       align-items: center;
     }
 
-    &:hover {
+    &:hover, &:focus {
+      // background-color: var(--red);
       box-shadow: inset 0 0 10px 2px #FFF;
     }
 
@@ -160,7 +207,7 @@ img {
     }
 
     &:hover &--scalable {
-      transform: scale(1.1);
+      //transform: scale(1.1);
       animation: heartbeat 1.5s ease-in-out infinite both;
 
       @keyframes heartbeat {
@@ -221,10 +268,11 @@ img {
       height: 300px;
       padding: 32px;
       border-radius: 16px;
-      transition: transform 0.5s ease-in-out;
+      transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
+        box-shadow: inset 0 0 0 3px #44D2FF;
       }
 
       &--no1 {
@@ -259,16 +307,33 @@ img {
       line-height: 32px;
       transition: transform 0.5s ease-in-out, text-shadow 0.3s ease-in-out;
 
-      .games__card:hover & {
-        text-shadow: -6px 7px 13px lighten($magenta, 30%); //greenyellow;
-      }
+      //.games__card:hover & {
+      //  text-shadow: -6px 7px 13px lighten($magenta, 30%); //greenyellow;
+      //}
 
+    }
+
+  }
+
+  &-group {
+    transition: 0.5s ease-in-out;
+
+    &.grid {
+      display: grid;
+      grid-template: "top" "bottom" 0px / 100%;
+
+      & .game-line--hidden:hover {
+        transition: 0.5s ease-in-out;
+        grid-template: "top" "bottom" 300px / 100%;
+      }
     }
 
   }
 
   &-line {
     height: 800px;
+    grid-area: top;
+    background: #000915;
 
     &.flex {
       display: flex;
@@ -305,6 +370,7 @@ img {
     }
 
     &--center {
+      position: relative;
 
       &.flex {
         justify-content: center;
@@ -322,12 +388,95 @@ img {
 
     }
 
+    &--hidden {
+      grid-area: bottom;
+      align-self: end;
+      z-index: -1;
+
+      width: 100%;
+      height: 0;
+      background: linear-gradient(#020024 0%, #E6E6E6 16px, #E6E6E6 calc(100% - 16px), #020024 100%);
+      padding-block: 32px;
+      box-sizing: border-box;
+      transition: 0.5s ease-in-out;
+
+      & .text-start {
+        color: var(--magenta);
+        font-size: 18px;
+        font-weight: 400;
+        text-align: center;
+
+        &--bold {
+          //width: 300px;
+          font-weight: 700;
+          //text-align: left;
+        }
+
+      }
+
+      & .button-start {
+        display: inline-block;
+
+        &:hover, &:focus {
+          border-color: var(--red);
+          box-shadow: inset 0 0 10px 2px var(--red);
+        }
+
+      }
+
+      & .input-start {
+        //display: block;
+        width: 100%;
+        max-width: 234px;
+        height: 48px;
+        border-radius: 30px;
+        border: 3px solid var(--magenta);
+        color: var(--magenta);
+        font-size: 24px;
+        font-weight: 500;
+        padding-inline: 32px;
+        text-align: center;
+        appearance: none;
+        outline: none;
+        transition: border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+
+        &:hover, &:focus {
+          border-color: var(--red);
+        }
+
+      }
+
+    }
+
+    &__content {
+      width: 100%;
+      height: 100%;
+      display: none;
+      opacity: 0;
+
+      &.flex {
+        display: flex;
+        align-items: center;
+        gap: 8px 32px;
+      }
+
+    }
+
   }
 
   &__box {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     gap: 32px;
+  }
+
+  &-gradient {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(var(--background) 0%, transparent 100%);
+    position: absolute;
+    top: 0;
   }
 
 }
@@ -341,6 +490,7 @@ img {
 .footer {
   width: 100%;
   height: 80px;
+  z-index: 1;
 
   &.flex {
     display: flex;
@@ -471,6 +621,26 @@ img {
         width: 100%;
         max-width: 378px;
         padding-inline: 16px;
+      }
+
+    }
+
+    &-line {
+
+      &--hidden {
+
+        & .text-start {
+          font-size: 16px;
+        }
+
+      }
+
+      &__content {
+
+        &.flex {
+          flex-direction: column;
+        }
+
       }
 
     }

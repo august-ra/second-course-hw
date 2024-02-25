@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 :root {
+  --red: #EB443F;
   --magenta: #9C0332;
+  --blue: #001944;
+  --background: #000915;
+  --cur-arrow: url("../img/BBani/Pen.cur"), auto;
+  --cur-hand: url("../img/BBani/UpArrow.cur"), pointer;
 }
 
 * {
@@ -8,14 +13,31 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  cursor: inherit;
 }
 
 body {
   background: #000915;
+  cursor: var(--cur-arrow);
+}
+body::-webkit-scrollbar {
+  width: 7px;
+  background-color: var(--blue);
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(-45deg, var(--blue) 0%, var(--magenta) 20px, var(--magenta) calc(100% - 20px), var(--blue) 100%);
 }
 
 a {
   text-decoration: none;
+}
+
+a, button {
+  cursor: var(--cur-hand);
+}
+
+label, input, select {
+  cursor: var(--cur-arrow);
 }
 
 img {
@@ -51,6 +73,9 @@ img {
   background-color: transparent;
   border: none;
 }
+.text-huge .button::selection {
+  background-color: var(--magenta);
+}
 .text-huge {
   max-width: 700px;
   color: #FFF;
@@ -79,6 +104,9 @@ img {
   font-weight: 700;
   transition: text-decoration-color 0.8s;
 }
+.text-big::selection {
+  background-color: var(--magenta);
+}
 .text-big:hover {
   text-decoration: underline 4px var(--magenta);
 }
@@ -89,6 +117,9 @@ img {
   line-height: 32px;
   margin-bottom: 44px;
 }
+.text-medi::selection {
+  background-color: var(--magenta);
+}
 .text-medi:not(.text-medi--wide) {
   max-width: 510px;
 }
@@ -96,6 +127,9 @@ img {
   font-weight: 700;
   display: inline-block;
   transition: text-decoration-color 0.8s;
+}
+.text-medi--bold::selection {
+  background-color: var(--magenta);
 }
 .text-medi--bold:hover {
   text-decoration: underline 4px var(--magenta);
@@ -111,22 +145,21 @@ img {
   border: 1px solid var(--magenta);
   color: #FFF;
   font-size: 18px;
-  cursor: pointer;
-  transition: box-shadow 0.5s ease-in-out;
+  outline: none;
+  transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 .button-start.flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.button-start:hover {
+.button-start:hover, .button-start:focus {
   box-shadow: inset 0 0 10px 2px #FFF;
 }
 .button-start--scalable {
   display: inline-block;
 }
 .button-start:hover .button-start--scalable {
-  transform: scale(1.1);
   animation: heartbeat 1.5s ease-in-out infinite both;
 }
 @keyframes heartbeat {
@@ -177,10 +210,11 @@ img {
   height: 300px;
   padding: 32px;
   border-radius: 16px;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 .games__card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: inset 0 0 0 3px #44D2FF;
 }
 .games__card--no1 {
   background-image: url(../img/game_1.png);
@@ -209,11 +243,21 @@ img {
   line-height: 32px;
   transition: transform 0.5s ease-in-out, text-shadow 0.3s ease-in-out;
 }
-.games__card:hover .games__caption {
-  text-shadow: -6px 7px 13px #fb3d77;
+.game-group {
+  transition: 0.5s ease-in-out;
+}
+.game-group.grid {
+  display: grid;
+  grid-template: "top" "bottom" 0px/100%;
+}
+.game-group.grid .game-line--hidden:hover {
+  transition: 0.5s ease-in-out;
+  grid-template: "top" "bottom" 300px/100%;
 }
 .game-line {
   height: 800px;
+  grid-area: top;
+  background: #000915;
 }
 .game-line.flex {
   display: flex;
@@ -236,6 +280,9 @@ img {
   max-width: 481px;
   max-height: 322px;
 }
+.game-line--center {
+  position: relative;
+}
 .game-line--center.flex {
   justify-content: center;
 }
@@ -246,10 +293,74 @@ img {
   display: flex;
   align-items: center;
 }
+.game-line--hidden {
+  grid-area: bottom;
+  align-self: end;
+  z-index: -1;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(#020024 0%, #E6E6E6 16px, #E6E6E6 calc(100% - 16px), #020024 100%);
+  padding-block: 32px;
+  box-sizing: border-box;
+  transition: 0.5s ease-in-out;
+}
+.game-line--hidden .text-start {
+  color: var(--magenta);
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+.game-line--hidden .text-start--bold {
+  font-weight: 700;
+}
+.game-line--hidden .button-start {
+  display: inline-block;
+}
+.game-line--hidden .button-start:hover, .game-line--hidden .button-start:focus {
+  border-color: var(--red);
+  box-shadow: inset 0 0 10px 2px var(--red);
+}
+.game-line--hidden .input-start {
+  width: 100%;
+  max-width: 234px;
+  height: 48px;
+  border-radius: 30px;
+  border: 3px solid var(--magenta);
+  color: var(--magenta);
+  font-size: 24px;
+  font-weight: 500;
+  padding-inline: 32px;
+  text-align: center;
+  appearance: none;
+  outline: none;
+  transition: border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+.game-line--hidden .input-start:hover, .game-line--hidden .input-start:focus {
+  border-color: var(--red);
+}
+.game-line__content {
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+}
+.game-line__content.flex {
+  display: flex;
+  align-items: center;
+  gap: 8px 32px;
+}
 .game__box {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   gap: 32px;
+}
+.game-gradient {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(var(--background) 0%, transparent 100%);
+  position: absolute;
+  top: 0;
 }
 
 #quiz {
@@ -261,6 +372,7 @@ img {
 .footer {
   width: 100%;
   height: 80px;
+  z-index: 1;
 }
 .footer.flex {
   display: flex;
@@ -337,6 +449,12 @@ img {
     width: 100%;
     max-width: 378px;
     padding-inline: 16px;
+  }
+  .game-line--hidden .text-start {
+    font-size: 16px;
+  }
+  .game-line__content.flex {
+    flex-direction: column;
   }
 }
 @media (max-width: 436px) {
