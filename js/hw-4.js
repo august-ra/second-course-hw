@@ -4,6 +4,8 @@ let arr
 let delimiter
 
 export function printEN(root) {
+    common.startTasks()
+
     root.innerHTML = `<h1 class="heading">There's a page for <b>JS</b>.</h1><br>`
 
     // task #01
@@ -13,7 +15,7 @@ export function printEN(root) {
     delimiter = ', '
     let index = 0
 
-    root.innerHTML += `<h2>Task #01</h2>`
+    root.innerHTML += common.printEnTask()
     root.innerHTML += `<p>`
 
     for (const text of arr) {
@@ -44,7 +46,7 @@ export function printEN(root) {
 
     delimiter = ''
 
-    root.innerHTML += `<h2>Task #02</h2>`
+    root.innerHTML += common.printEnTask()
     root.innerHTML += `<p>`
 
     arr = ['one', 'two', 'three', 'four', 'five']
@@ -62,7 +64,7 @@ export function printEN(root) {
 
     delimiter = ''
 
-    root.innerHTML += `<h2>Task #03</h2>`
+    root.innerHTML += common.printEnTask()
     root.innerHTML += `<p>`
 
     for (let index = 7; index <= 22; ++index) {
@@ -82,7 +84,7 @@ export function printEN(root) {
         'John': 400,
     }
 
-    root.innerHTML += `<h2>Task #04</h2>`
+    root.innerHTML += common.printEnTask()
     root.innerHTML += `<p>`
 
     for (const key in data) {
@@ -102,17 +104,19 @@ export function printEN(root) {
         num /= 2
     }
 
-    root.innerHTML += `<h2>Task #05</h2>`
+    root.innerHTML += common.printEnTask()
     root.innerHTML += `<p>The system makes <b>${counter} divisions</b> to get <b>${num}</b>.</p>`
 
     // task #06
 
-    root.innerHTML += `<h2>Task #06</h2>`
+    root.innerHTML += common.printEnTask()
 
     new Schedule().printFridays(root, 'en')
 }
 
 export function printRU(root) {
+    common.startTasks()
+
     root.innerHTML = `<h1 class="heading">ВНИМАНИЕ! Страница исполнения <b>JS</b>.</h1><br>`
 
     // task #01
@@ -122,7 +126,7 @@ export function printRU(root) {
     delimiter = ', '
     let index = 0
 
-    root.innerHTML += `<h2>Задача №01</h2>`
+    root.innerHTML += common.printRuTask()
     root.innerHTML += `<p>`
 
     for (const text of arr) {
@@ -153,7 +157,7 @@ export function printRU(root) {
 
     delimiter = ''
 
-    root.innerHTML += `<h2>Задача №02</h2>`
+    root.innerHTML += common.printRuTask()
     root.innerHTML += `<p>`
 
     arr = ['раз', 'два', 'три', 'четыре', 'пять']
@@ -171,7 +175,7 @@ export function printRU(root) {
 
     delimiter = ''
 
-    root.innerHTML += `<h2>Задача №03</h2>`
+    root.innerHTML += common.printRuTask()
     root.innerHTML += `<p>`
 
     for (let index = 7; index <= 22; ++index) {
@@ -191,7 +195,7 @@ export function printRU(root) {
         'Петя': 400,
     }
 
-    root.innerHTML += `<h2>Задача №04</h2>`
+    root.innerHTML += common.printRuTask()
     root.innerHTML += `<p>`
 
     for (const key in data) {
@@ -213,12 +217,12 @@ export function printRU(root) {
 
     const units = common.calcUnits(counter, 'делений', 'деление', 'деления')
 
-    root.innerHTML += `<h2>Задача №05</h2>`
+    root.innerHTML += common.printRuTask()
     root.innerHTML += `<p>Система произвела <b>${counter} ${units}</b> и получила <b>${num.toLocaleString('ru-RU')}</b>.</p>`
 
     // task #06
 
-    root.innerHTML += `<h2>Задача №06</h2>`
+    root.innerHTML += common.printRuTask()
 
     new Schedule().printFridays(root, 'ru')
 }
