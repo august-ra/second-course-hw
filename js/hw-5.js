@@ -5,7 +5,7 @@ let age, number
 export function printEN(root) {
     common.startTasks()
 
-    root.innerHTML = `<h1 class="heading">There's a page for <b>JS</b>.</h1><br>`
+    root.innerHTML = common.printEnHead()
 
     // task #01
 
@@ -162,7 +162,7 @@ export function printEN(root) {
 export function printRU(root) {
     common.startTasks()
 
-    root.innerHTML = `<h1 class="heading">ВНИМАНИЕ! Страница исполнения <b>JS</b>.</h1><br>`
+    root.innerHTML = common.printRuHead()
 
     // task #01
 
