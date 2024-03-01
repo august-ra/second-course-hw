@@ -18,6 +18,19 @@ document.getElementById("game_3").addEventListener("click", () => jumpToSection(
 
 /////////////
 
+function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; --i) {
+        let j = Math.floor(Math.random() * (i + 1))
+        let temp
+
+        temp = arr[j]
+        arr[j] = arr[i]
+        arr[i] = temp
+    }
+
+    return arr
+}
+
 // games
 
 document.getElementById("btn_start_1").addEventListener("click", () => {
@@ -83,4 +96,22 @@ document.getElementById("btn_do_1").addEventListener("click", () => {
         result = `«${text}»<br>${makeSpan(`Вы ввели число большее, чем 12.${result}`)}`
 
     document.getElementById("game-seasons-result").innerHTML = result
+})
+
+document.getElementById("btn_start_2").addEventListener("click", () => {
+    let words = ['Яблоко', 'Груша', 'Дыня', 'Виноград', 'Персик', 'Апельсин', 'Мандарин']
+    shuffle(words)
+    alert(words)
+
+    let answers = [
+                  words[0].toLowerCase() === prompt('Что было первым в списке?').trim().toLowerCase(),
+        words.slice(-1)[0].toLowerCase() === prompt('Что было последним в списке?').trim().toLowerCase(),
+    ]
+
+    if (answers[0] && answers[1])
+        alert('Отличный результат!')
+    else if (answers[0] || answers[1])
+        alert('Хорошо, пусть не всё получилось!')
+    else
+        alert('Ну, так себе, конечно!')
 })

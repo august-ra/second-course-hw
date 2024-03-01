@@ -2,14 +2,8 @@ import * as common from "./common.js"
 
 const password = "1"
 
-let confirm
-let answer
-
-let a
-let b
-let d
-let e
-let result
+let confirm, answer
+let a, b, d, e, result
 
 export function printEN(root) {
     common.startTasks()

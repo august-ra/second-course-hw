@@ -17,6 +17,22 @@ export function calcUnits(value, unit_0, unit_1, unit_2) {
 
 ///////
 
+export function promptNumber(message, defaultValue) {
+    let value = prompt(message, defaultValue)
+
+    if (value === null || value.trim() === '')
+        return 'Ничего не введено или отмена ввода'
+
+    value = Number(value)
+
+    if (isNaN(value))
+        return 'Нужно вводить только цифры'
+
+    return value
+}
+
+///////
+
 let num = 0
 
 export const startTasks = () => num = 0
