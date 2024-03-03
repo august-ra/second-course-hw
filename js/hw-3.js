@@ -1,27 +1,24 @@
-// import * as common from "./common.js"
+import * as common from "./common.js"
 
 const password = "1"
-let confirm
-let answer
 
-let a
-let b
-let d
-let e
-let result
+let confirm, answer
+let a, b, d, e, result
 
 export function printEN(root) {
-    root.innerHTML = `<h1 class="heading">There's a page for <b>JS</b>.</h1><br>`
+    common.startTasks()
+
+    root.innerHTML = common.printEnHead()
 
     // task #01
 
-    root.innerHTML += `<h2>Task #1</h2>`
+    root.innerHTML += common.printEnTask()
 
     if (!confirm)
         confirm = prompt(`Input the password.`)
 
     if (password === confirm)
-        root.innerHTML += `<p>Nice! <b style="color: #039C32;">Correct password!</b> Mr. Smith, The Matrix has been waiting for you!</p>`
+        root.innerHTML += `<p>Nice! <b style="color: #036421;">Correct password!</b> Mr. Smith, The Matrix has been waiting for you!</p>`
     else
         root.innerHTML += `<p>Warning! <b style="color: #9C0332;">Incorrect password!</b> <i>Someboby</i>, call the police.</p>`
 
@@ -29,7 +26,7 @@ export function printEN(root) {
 
     const arr = [0, 10, -3, 2]
 
-    root.innerHTML += `<h2>Task #2</h2>`
+    root.innerHTML += common.printEnTask()
     root.innerHTML += `<p>Checking that the range <b>(0; 10)</b> includes numbers from a set.</p>`
 
     for (const item of arr) {
@@ -51,7 +48,7 @@ export function printEN(root) {
     else
         answer = "Wrong!"
 
-    root.innerHTML += `<h2>Task #3</h2>`
+    root.innerHTML += common.printEnTask()
     root.innerHTML += `<p>For values <b>${d}</b> and <b>${e}</b> the system has said <b>"${answer}"</b>.</p>`
 
     // task #04
@@ -59,7 +56,7 @@ export function printEN(root) {
     a = "2";
     b = "3";
 
-    root.innerHTML += `<h2>Task #4</h2>`
+    root.innerHTML += common.printEnTask()
     root.innerHTML += `<p>There was two strings <b>${a}</b> и <b>${b}</b> but the summary is <b>${Number(a) + Number(b)}</b>.</p>`
 
     // task #05
@@ -91,7 +88,7 @@ export function printEN(root) {
             answer = null
     }
 
-    root.innerHTML += `<h2>Task #5</h2>`
+    root.innerHTML += common.printEnTask()
 
     if (answer === null)
         root.innerHTML += `<p>There isn't month with <b>${monthNumber}</b> number in a year.</p>`
@@ -100,16 +97,18 @@ export function printEN(root) {
 
     // task #06
 
-    root.innerHTML += `<h2>Task #6</h2>`
-    root.innerHTML += `<p>There is my games' page. <a href="../index.html">Tap it!</a></p>`
+    root.innerHTML += common.printEnTask()
+    root.innerHTML += common.printEnLink()
 }
 
 export function printRU(root) {
-    root.innerHTML = `<h1 class="heading">ВНИМАНИЕ! Страница исполнения <b>JS</b>.</h1><br>`
+    common.startTasks()
+
+    root.innerHTML = common.printRuHead()
 
     // task #01
 
-    root.innerHTML += `<h2>Задача №1</h2>`
+    root.innerHTML += common.printRuTask()
 
     if (!confirm)
         confirm = prompt(`Введите пароль.`)
@@ -123,7 +122,7 @@ export function printRU(root) {
 
     const arr = [0, 10, -3, 2]
 
-    root.innerHTML += `<h2>Задача №2</h2>`
+    root.innerHTML += common.printRuTask()
     root.innerHTML += `<p>Проверяем значения на вхождение в диапазон <b>(0; 10)</b> <i>(невключительно)</i>.</p>`
 
     for (const item of arr) {
@@ -145,7 +144,7 @@ export function printRU(root) {
     else
         answer = "Неверно!"
 
-    root.innerHTML += `<h2>Задача №3</h2>`
+    root.innerHTML += common.printRuTask()
     root.innerHTML += `<p>Для значений <b>${d}</b> и <b>${e}</b> система ответила <b>"${answer}"</b>.</p>`
 
     // task #04
@@ -153,7 +152,7 @@ export function printRU(root) {
     a = "2";
     b = "3";
 
-    root.innerHTML += `<h2>Задача №4</h2>`
+    root.innerHTML += common.printRuTask()
     root.innerHTML += `<p>Были числа <b>${a}</b> и <b>${b}</b> в виде строк, а получили <s>артишок</s> цифру <b>${Number(a) + Number(b)}</b>.</p>`
 
     // task #05
@@ -185,7 +184,7 @@ export function printRU(root) {
             answer = null
     }
 
-    root.innerHTML += `<h2>Задача №5</h2>`
+    root.innerHTML += common.printRuTask()
 
     if (answer === null)
         root.innerHTML += `<p>В году нет <b>${monthNumber}-го</b> месяца.</p>`
@@ -194,6 +193,6 @@ export function printRU(root) {
 
     // task #06
 
-    root.innerHTML += `<h2>Задача №6</h2>`
-    root.innerHTML += `<p>Переход на страницу с играми <a href="../index.html">здесь</a>!</p>`
+    root.innerHTML += common.printRuTask()
+    root.innerHTML += common.printRuLink()
 }
